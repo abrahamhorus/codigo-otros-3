@@ -8,8 +8,8 @@ const productos = [
   {nombre: "Zapato rojo", tipo: "zapato", color: "rojo", img: "./zapato-rojo.jpg"}
 ]
 
-const li = document.getElementsByName("lista-de-productos")
-const $i = document.querySelector('.input');
+const li = document.getElementById("lista-de-productos")
+const $i = document.querySelector('input');
 
 for (let i = 0; i < productos.length; i++) {
   var d = document.createElement("div")
@@ -28,7 +28,7 @@ for (let i = 0; i < productos.length; i++) {
   li.appendChild(d)
 }
 
-displayProductos(productos)
+function displayProductos(productos){
 const botonDeFiltro = document.querySelector("button");
 
 botonDeFiltro.onclick = function() {
@@ -61,3 +61,4 @@ botonDeFiltro.onclick = function() {
 const filtrado = (productos = [], texto) => {
   return productos.filter(item => item.tipo.includes(texto) || item.color.includes(texto));
 }  
+}
